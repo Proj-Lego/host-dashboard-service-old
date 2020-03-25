@@ -1,0 +1,11 @@
+{
+  "name": "restaurant-onboarding",
+  "version": "1.0.0",
+  "description": "Mobile first, responsive contact from that sends data to a firebase database",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhinav Pottabathula",
+  "license": "ISC"
+}

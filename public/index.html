@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lego Restaurant Form</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="style.css">
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 >Lego Restaurant Portal</h1>
+    <div class="wrapper">
+      <div class="company-info">
+        <h3>Contact Information</h3>
+        <ul>
+          <li><i class="fa fa-road"></i> Milpitas, CA</li>
+          <li><i class="fa fa-phone"></i> (555) 555-5555</li>
+          <li><i class="fa fa-envelope"></i> test@lego.test</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h3>Update Your Menu</h3>
+        <div class="alert">Your message has been sent</div>
+        <form id="contactForm">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name" id="name" required>
+          </p>
+          <p>
+            <label>Company</label>
+            <input type="text" name="company" id="company">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="email" id="email" required>
+          </p>
+          <p>
+            <label>Phone Number</label>
+            <input type="text" name="phone" id="phone">
+          </p>
+          <p class="full">
+            <label>Message</label>
+            <textarea name="message" rows="5" id="message"></textarea>
+          </p>
+          
+
+
+          <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+          <div class="full">
+              <div class="row clearfix">
+                <div class="col-md-12 table-responsive">
+                <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                  <thead>
+                    <tr >
+                      <th class="text-center">
+                        Food Item
+                      </th>
+                      <th class="text-center">
+                        Discount
+                      </th>
+                      <th class="text-center">
+                        Description
+                      </th>
+                      <th class="text-center">
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="menu-table">
+                    <tr id='addr0' data-id="0" class="hidden">
+                      <td data-name="food">
+                          <input type="text" name='name0'  placeholder='ie. Fries' class="form-control"/>
+                      </td>
+                      <td data-name="discount">
+                          <input type="text" name='mail0' placeholder='ie. 10%, 20%' class="form-control"/>
+                      </td>
+                      <td data-name="description">
+                          <input name="desc0" placeholder="ie. Crisp and Salted" class="form-control"></input>
+                      </td>
+                      <td data-name="del">
+                          <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="text-right">
+              <a id="add_row" class="btn btn-primary">Add Row</a>
+            </div>
+          </div>
+
+
+          <p class="full">
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
