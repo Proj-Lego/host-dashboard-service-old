@@ -9,14 +9,57 @@ var config = {
   appId: "1:734497620137:web:d2e361c575bbe9c53c69b8",
   measurementId: "G-EZC9K2815R"
 };
+
 firebase.initializeApp(config);
 firebase.analytics();
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) { // User is signed in.
+    document.getElementById("user_div").style.display = "block";
+    document.getElementById("login_div").style.display = "none";
+    var user = firebase.auth().currentUser;
+    if(user != null){
+      var email_id = user.email;
+      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+    }
+  } else { // No user is signed in.
+    document.getElementById("user_div").style.display = "none";
+    document.getElementById("login_div").style.display = "initial";
+  }
+});
+
+function login(){
+  var userEmail = document.getElementById("email_field").value;
+  var userPass = document.getElementById("password_field").value;
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    window.alert("Error : " + errorMessage);
+  });
+}
+
+function signup(){
+  var userEmail = document.getElementById("email_field").value;
+  var userPass = document.getElementById("password_field").value;
+
+  firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    window.alert("Error : " + errorMessage);
+  });
+  window.alert("Sign-up Successful!");
+}
+
+function logout(){
+  firebase.auth().signOut();
+}
+
 // Reference messages collection
 var restaurantsRef = firebase.firestore().collection('restaurants');
-
 // Listen for form submit
 document.getElementById('contactForm').addEventListener('submit', submitForm);
-
 
 // Submit form
 function submitForm(e){
